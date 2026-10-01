@@ -16,8 +16,8 @@ export default function Dashboard() {
     <div className="page">
       <div className="hero">
         <div>
-          <p className="eyebrow">INTERACTIVE GAME-DEV ACADEMY</p>
-          <h1>Learn Game Dev.<br />Build Games with AI.</h1>
+          <p className="eyebrow">Akademi game-dev interaktif untuk 6 murid</p>
+          <h1>Belajar bikin game, ditemani AI.</h1>
           <p className="muted">Konsep → desain → coding → asset → gameplay → testing → build. Pola: PLAN → ASK AI → IMPLEMENT → RUN → DEBUG → ITERATE.</p>
           <div className="hero-actions">
             {next ? <Link className="btn primary" to={`/learn/${next.id}`}>▶ Continue: {next.title}</Link> : <span className="btn">🎉 Semua selesai!</span>}
@@ -49,7 +49,7 @@ export default function Dashboard() {
           { t: 'Project 01', d: 'Breakout playable', to: '/learn/project-breakout-01' },
         ].map(c => (
           <Link key={c.t} className="card" to={c.to}>
-            <h3>{c.t}</h3><p>{c.d}</p><span className="go">Mulai →</span>
+            <h3>{c.t}</h3><p>{c.d}</p>
           </Link>
         ))}
       </div>

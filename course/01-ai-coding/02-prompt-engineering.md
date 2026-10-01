@@ -86,4 +86,4 @@ Spesifik + konteks ramping + acceptance jelas = AI dapat diandalkan.
 
 ## Next Lesson
 
-→ `02-opencode/01-opencode-setup.md` — Instalasi & struktur OpenCode.
+→ `03-prompt-patterns-gamedev.md` — Pola Prompt Khusus Game Development.
