@@ -4,10 +4,24 @@ import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
 import rehypeSlug from 'rehype-slug';
 import Mermaid from './Mermaid';
+import SvgFlow, { parseFlowSpec, flowFromMermaid } from './SvgAnim';
 
 function CodeBlock({ lang, code }: { lang: string; code: string }) {
   const [copied, setCopied] = useState(false);
-  if (lang === 'mermaid') return <Mermaid chart={code} />;
+  if (lang === 'svg-anim') {
+    const spec = parseFlowSpec(code);
+    if (spec) return <SvgFlow spec={spec} title="Visual workflow" />;
+    // jatuh ke code biasa jika format salah
+  }
+  if (lang === 'mermaid') {
+    const auto = flowFromMermaid(code);
+    return (
+      <>
+        {auto && <SvgFlow spec={auto} title="Visual workflow (animasi)" />}
+        <Mermaid chart={code} />
+      </>
+    );
+  }
   const copy = async () => {
     try { await navigator.clipboard.writeText(code); setCopied(true); setTimeout(() => setCopied(false), 1200); } catch {}
   };

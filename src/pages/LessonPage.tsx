@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { getLessonById, getPrevNext } from '../lib/course';
 import { useProgress } from '../lib/progress';
 import MarkdownView from '../components/MarkdownView';
+import Assistant from '../components/Assistant';
 
 export default function LessonPage() {
   const { id } = useParams();
@@ -48,6 +49,8 @@ export default function LessonPage() {
       )}
 
       <MarkdownView body={lesson.body} />
+
+      <Assistant lessonId={lesson.id} lessonTitle={lesson.title} />
 
       <div className="prevnext">
         {prev ? <Link to={`/learn/${prev.id}`} className="pn">← {prev.title}</Link> : <span />}

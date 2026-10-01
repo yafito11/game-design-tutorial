@@ -72,6 +72,34 @@ a{color:var(--accent);text-decoration:none}
 .prevnext{display:flex;justify-content:space-between;gap:10px;margin:26px 0}
 .pn{border:1px solid var(--border);background:var(--panel);padding:10px 14px;border-radius:12px;max-width:48%}
 .pn.right{text-align:right;margin-left:auto}
+/* Assistant RAG */
+.assistant{border:1px solid var(--border);background:var(--panel);border-radius:var(--radius);padding:16px;margin:26px 0}
+.assistant h2{margin:0 0 10px;border:none;padding:none;font-size:20px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.chat{display:flex;flex-direction:column;gap:10px;max-height:420px;overflow-y:auto;margin-bottom:12px}
+.bubble{border:1px solid var(--border);border-radius:12px;padding:10px 12px;background:var(--panel2)}
+.bubble.user{align-self:flex-end;background:#1c2b4a;max-width:90%}
+.bubble.ai{align-self:flex-start;max-width:100%}
+.bubble p{margin:0 0 6px}
+.sources{font-size:12px;color:var(--muted)}
+.askrow{display:flex;gap:8px}
+.askrow input{flex:1;padding:10px 12px;border-radius:10px;border:1px solid var(--border);background:#0a0d13;color:var(--text)}
+/* Settings */
+.fld{display:block;margin:10px 0;font-size:14px}
+.fld input,.fld select{width:100%;margin-top:6px;padding:10px 12px;border-radius:10px;border:1px solid var(--border);background:#0a0d13;color:var(--text)}
+/* SVG flow animation */
+.svgflow{border:1px solid var(--border);background:var(--panel);border-radius:12px;padding:12px;margin:14px 0}
+.svgflow figcaption{font-size:13px;color:var(--muted);margin-bottom:8px}
+.svgflow svg{width:100%;height:auto;display:block}
+.flow-line{stroke:#6e9fff;stroke-width:2;stroke-dasharray:8 6;animation:dashmove 1.2s linear infinite}
+.flow-dot{fill:#8affc1}
+.node rect{fill:#161c27;stroke:#232b3a}
+.node text{fill:#e6eaf2;font-size:13px;font-weight:600}
+.node.hot rect{stroke:#8affc1;stroke-width:2;filter:drop-shadow(0 0 6px rgba(138,255,193,.5))}
+.svgflow.paused .flow-line,.svgflow.paused .flow-dot{animation-play-state:paused}
+.svgflow.paused animateMotion{animation-play-state:paused}
+@keyframes dashmove{to{stroke-dashoffset:-14}}
+@media (prefers-reduced-motion: reduce){.flow-line{animation:none}}
 .scrim{display:none}
 .icon-btn{display:none;background:transparent;border:1px solid var(--border);color:var(--text);border-radius:8px;padding:6px 10px}
 .only-mobile{display:none!important}

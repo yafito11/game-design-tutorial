@@ -19,6 +19,7 @@ export function Sidebar({ open, onClose }: { open: boolean; onClose: () => void 
           <Link to="/" className="side-link" onClick={onClose}>📊 Dashboard</Link>
           <Link to="/roadmap" className="side-link" onClick={onClose}>🗺 Roadmap</Link>
           <Link to="/glossary" className="side-link" onClick={onClose}>📖 Glossary</Link>
+          <Link to="/settings" className="side-link" onClick={onClose}>⚙ Settings AI</Link>
           {PHASES.filter(p => p.id !== 'general').map(ph => {
             const items = lessons.filter(l => l.phase === ph.id);
             if (!items.length) return null;
@@ -69,6 +70,7 @@ export function Topbar({ onMenu }: { onMenu: () => void }) {
         )}
       </div>
       <a className="gh" href="https://github.com" target="_blank" rel="noreferrer">Docs</a>
+      <Link className="gh" to="/settings">⚙ AI</Link>
     </header>
   );
 }
